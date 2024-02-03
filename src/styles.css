@@ -3,6 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html{
+html{
     @apply bg-pink-900;
-} */
+}
