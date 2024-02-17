@@ -4,5 +4,7 @@
 @tailwind utilities;
 
 html{
-    @apply bg-pink-900;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
