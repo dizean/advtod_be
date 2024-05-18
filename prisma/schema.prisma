@@ -50,6 +50,8 @@ model Lists{
   lists Lists @relation(references: [id],fields: [listId])
  }
 
+
+
  //create acc -> get user id to create a new list -> get list id to create a new item
  //list associates with lists and lists and associates with item
  //flow
