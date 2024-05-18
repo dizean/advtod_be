@@ -28,7 +28,9 @@ async function Get(req: Request, res: Response) {
       return res.status(500).json({ message: 'Internal Server Error' });
     }
   }
-
-const AccountControl = {Create, Get};
+  async function Test(req: Request, res: Response) {
+    return res.json({ message: 'Internal Server Error' });
+  }
+const AccountControl = {Create, Get, Test};
 
 export default AccountControl;
