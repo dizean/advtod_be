@@ -29,7 +29,7 @@ async function Get(req: Request, res: Response) {
     }
   }
   async function Test(req: Request, res: Response) {
-    return res.json({ message: 'Internal Server Error' });
+    return res.json({ message: 'Hello sir uwu' });
   }
 const AccountControl = {Create, Get, Test};
 
