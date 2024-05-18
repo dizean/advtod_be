@@ -35,7 +35,7 @@ model Account{
 
 model Lists{
  id String    @id @default(auto()) @map("_id") @db.ObjectId
- name String
+ listName String
  userId  String @db.ObjectId
  user Account @relation(references: [id], fields: [userId])
 
@@ -44,7 +44,7 @@ model Lists{
 }
  model Items{
   id String    @id @default(auto()) @map("_id") @db.ObjectId
-  name String
+  itemName String
   date String
   listId String @db.ObjectId
   lists Lists @relation(references: [id],fields: [listId])
