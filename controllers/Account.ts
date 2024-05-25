@@ -29,22 +29,19 @@ async function Get(req: Request, res: Response) {
     }
   }
 
-// async function Login(req: Request, res: Response) {
-//   const { username, password } = req.body.data;
-//   const result = await prisma.account.findFirst({
-//     where: {
-//       username,
-//       password,
-//     },
-//   });
-//   if (!result) {
-//     return res.json({ message: "No account found" });
-//   } else {
-//     return res.json({ message: "Well well well" });
-//   }
-// }
 async function Login(req: Request, res: Response) {
-  return res.json({ message: 'Hello sir uwu' });
+  const { username, password } = req.body.data;
+  const result = await prisma.account.findFirst({
+    where: {
+      username,
+      password,
+    },
+  });
+  if (!result) {
+    return res.json({ message: "No account found" });
+  } else {
+    return res.json({ message: "Well well well" });
+  }
 }
 
 
