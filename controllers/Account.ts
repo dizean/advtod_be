@@ -21,16 +21,37 @@ async function Create(req: Request, res: Response) {
 }
 async function Get(req: Request, res: Response) {
     try {
-      const data = await prisma.account.findMany();
-      return res.json(data); 
+      const result = await prisma.account.findMany();
+      return res.json(result);
     } catch (error) {
       console.error('Error fetching data:', error);
       return res.status(500).json({ message: 'Internal Server Error' });
     }
   }
-  async function Test(req: Request, res: Response) {
+
+// async function Login(req: Request, res: Response) {
+//   const { username, password } = req.body.data;
+//   const result = await prisma.account.findFirst({
+//     where: {
+//       username,
+//       password,
+//     },
+//   });
+//   if (!result) {
+//     return res.json({ message: "No account found" });
+//   } else {
+//     return res.json({ message: "Well well well" });
+//   }
+// }
+async function Login(req: Request, res: Response) {
+  return res.json({ message: 'Hello sir uwu' });
+}
+
+
+
+async function Test(req: Request, res: Response) {
     return res.json({ message: 'Hello sir uwu' });
   }
-const AccountControl = {Create, Get, Test};
+const AccountControl = {Create, Get, Test, Login};
 
 export default AccountControl;
