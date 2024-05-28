@@ -37,17 +37,17 @@ model Lists{
  id String    @id @default(auto()) @map("_id") @db.ObjectId
  listName String
  userId  String @db.ObjectId
- user Account @relation(references: [id], fields: [userId])
+ user Account @relation(references: [id], fields: [userId], onDelete: Cascade, onUpdate: Cascade)
 
  items Items[] 
-
 }
+
  model Items{
   id String    @id @default(auto()) @map("_id") @db.ObjectId
   itemName String
   date String
   listId String @db.ObjectId
-  lists Lists @relation(references: [id],fields: [listId])
+  lists Lists @relation(references: [id],fields: [listId], onDelete: Cascade, onUpdate: Cascade)
  }
 
 
